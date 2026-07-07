@@ -96,7 +96,7 @@
     display: flex;
     align-items: center;
     overflow: hidden;
-    padding: 0 5%;
+    padding: 6rem 5% 4rem;
   }
 
   .hero-bg-lines {
@@ -684,6 +684,11 @@
   <a href="#contato" class="nav-cta">Solicitar Orçamento</a>
 </nav>
 
+<!-- LOGO BANNER TOPO -->
+<div style="width:100%;padding-top:68px;line-height:0;background:#fff;">
+  <img src="imagens/logogrande.jpeg" alt="Limit Solucion" style="width:100%;height:auto;display:block;object-fit:cover;">
+</div>
+
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg-lines"></div>
@@ -714,11 +719,6 @@
     </div>
   </div>
 </section>
-
-<!-- LOGO GRANDE -->
-<div style="width:100%;overflow:hidden;line-height:0;max-height:320px;">
-  <img src="imagens/logogrande.jpeg" alt="Limit Solucion" style="width:100%;height:320px;object-fit:cover;object-position:center;display:block;">
-</div>
 
 <!-- SOBRE -->
 <section class="sobre" id="sobre">
@@ -802,32 +802,32 @@
   </div>
   <div class="fotos-grid">
     <div class="foto-item" data-reveal>
-      <img src="imagens/subestacao.jpeg" alt="Técnico operando subestação elétrica">
-      <div class="foto-overlay"><span class="foto-caption">Subestação Elétrica</span></div>
+      <img src="imagens/retrofit-painel.jpeg" alt="Retrofit em Painel">
+      <div class="foto-overlay"><span class="foto-caption">Retrofit em Painel</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="1">
-      <img src="imagens/altatensao.jpeg" alt="Operação em linha de alta tensão">
-      <div class="foto-overlay"><span class="foto-caption">Alta Tensão</span></div>
+      <img src="imagens/manutencao-rede-aerea.jpeg" alt="Manutenção em Rede Aérea">
+      <div class="foto-overlay"><span class="foto-caption">Manutenção Rede Aérea</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="2">
-      <img src="imagens/dijuntoravacuo.jpeg" alt="Teste em disjuntor a vácuo">
-      <div class="foto-overlay"><span class="foto-caption">Ensaio de Equipamentos</span></div>
+      <img src="imagens/manutencao-transformador.jpeg" alt="Manutenção em Transformador">
+      <div class="foto-overlay"><span class="foto-caption">Manutenção em Transformador</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="1">
-      <img src="imagens/veiculos.jpeg" alt="Veículos Limit Solucion em campo">
-      <div class="foto-overlay"><span class="foto-caption">Equipe de Campo</span></div>
+      <img src="imagens/manutencao-subestacao.jpeg" alt="Manutenção em Subestação 138 kV">
+      <div class="foto-overlay"><span class="foto-caption">Manutenção Subestação 138 kV</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="2">
-      <img src="imagens/aterramento.jpeg" alt="Medição de aterramento">
-      <div class="foto-overlay"><span class="foto-caption">Medição de Aterramento</span></div>
+      <img src="imagens/manutencao-disjuntor.jpeg" alt="Manutenção em Disjuntor">
+      <div class="foto-overlay"><span class="foto-caption">Manutenção em Disjuntor</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="3">
-      <img src="imagens/teste.jpeg" alt="EPI arco elétrico - Schneider">
-      <div class="foto-overlay"><span class="foto-caption">Segurança - EPI Arco</span></div>
+      <img src="imagens/qualidade-energia.jpeg" alt="Análise de Qualidade de Energia">
+      <div class="foto-overlay"><span class="foto-caption">Qualidade de Energia</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="1">
-      <img src="imagens/poste.jpeg" alt="Trabalho em poste de alta tensão">
-      <div class="foto-overlay"><span class="foto-caption">Trabalho em Poste</span></div>
+      <img src="imagens/manobra-subestacao.jpeg" alt="Manobra em Subestação">
+      <div class="foto-overlay"><span class="foto-caption">Manobra em Subestação</span></div>
     </div>
     <div class="foto-item" data-reveal data-delay="2">
       <img src="imagens/dds.jpeg" alt="DDS - Diálogo Diário de Segurança">
@@ -906,15 +906,26 @@
     <div class="contato-info-item">
       <div class="contato-dot"></div>
       <div>
+        <div class="contato-label">Telefone / WhatsApp</div>
+        <div class="contato-value">
+          <a href="https://wa.me/5571996625354" target="_blank" style="color:inherit;text-decoration:none;">
+            (71) 99662-5354
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="contato-info-item">
+      <div class="contato-dot"></div>
+      <div>
         <div class="contato-label">E-mail</div>
-        <div class="contato-value">limit.solucion@outlook.com</div>
+        <div class="contato-value">contato@limitsolucion.com.br</div>
       </div>
     </div>
     <div class="contato-info-item">
       <div class="contato-dot"></div>
       <div>
         <div class="contato-label">Website</div>
-        <div class="contato-value">https://site-limit-solucion.vercel.app</div>
+        <div class="contato-value"><a href="https://site-limit-solucion.vercel.app/" target="_blank" style="color:inherit;">site-limit-solucion.vercel.app</a></div>
       </div>
     </div>
     <div class="contato-info-item">
@@ -934,30 +945,32 @@
   </div>
 
   <div data-reveal data-delay="2">
-    <form class="contato-form" onsubmit="handleForm(event)">
+    <form class="contato-form" action="https://formspree.io/f/mbdvbaev" method="POST">
+      <input type="hidden" name="_subject" value="Novo contato pelo site - Limit Solucion">
+      <input type="hidden" name="_next" value="">
       <div class="form-row">
         <div class="form-group">
           <label>Nome</label>
-          <input type="text" placeholder="Seu nome completo">
+          <input type="text" name="nome" placeholder="Seu nome completo" required>
         </div>
         <div class="form-group">
           <label>Empresa</label>
-          <input type="text" placeholder="Sua empresa">
+          <input type="text" name="empresa" placeholder="Sua empresa">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>E-mail</label>
-          <input type="email" placeholder="seu@email.com">
+          <input type="email" name="email" placeholder="seu@email.com" required>
         </div>
         <div class="form-group">
           <label>Telefone</label>
-          <input type="tel" placeholder="(71) 00000-0000">
+          <input type="tel" name="telefone" placeholder="(71) 00000-0000">
         </div>
       </div>
       <div class="form-group">
         <label>Serviço de Interesse</label>
-        <select>
+        <select name="servico">
           <option value="">Selecione um serviço</option>
           <option>Construção Civil</option>
           <option>Comissionamento</option>
@@ -969,7 +982,7 @@
       </div>
       <div class="form-group">
         <label>Mensagem</label>
-        <textarea placeholder="Descreva seu projeto ou necessidade..."></textarea>
+        <textarea name="mensagem" placeholder="Descreva seu projeto ou necessidade..." required></textarea>
       </div>
       <button type="submit" class="btn-primary" style="border:none;cursor:pointer;width:100%;font-family:var(--font-body);font-size:0.88rem">Enviar Mensagem</button>
     </form>
@@ -999,16 +1012,7 @@
 
   document.querySelectorAll('[data-reveal]').forEach(el => observer.observe(el));
 
-  function handleForm(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Mensagem Enviada ✓';
-    btn.style.background = '#1a7a3c';
-    setTimeout(() => {
-      btn.textContent = 'Enviar Mensagem';
-      btn.style.background = '';
-    }, 3000);
-  }
+
 
   // Smooth active nav
   const navLinks = document.querySelectorAll('.nav-links a');
