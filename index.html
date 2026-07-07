@@ -655,6 +655,59 @@
   [data-reveal][data-delay="4"] { transition-delay: 0.4s; }
   [data-reveal][data-delay="5"] { transition-delay: 0.5s; }
 
+  /* MENU HAMBURGUER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    background: none;
+    border: none;
+  }
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gray-900);
+    transition: all 0.3s;
+  }
+  .hamburger.ativo span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.ativo span:nth-child(2) { opacity: 0; }
+  .hamburger.ativo span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 60px;
+    left: 0; right: 0;
+    background: var(--white);
+    border-top: 2px solid var(--red);
+    z-index: 99;
+    flex-direction: column;
+    padding: 1rem 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .mobile-menu.ativo { display: flex; }
+  .mobile-menu a {
+    padding: 0.9rem 5%;
+    color: var(--gray-900);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--gray-200);
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-menu a:hover { background: var(--gray-100); color: var(--red); }
+  .mobile-menu a:last-child { border-bottom: none; color: var(--red); font-weight: 700; }
+
+  @media (max-width: 600px) {
+    .hamburger { display: flex; }
+  }
+
+
   @media (max-width: 900px) {
     .sobre, .contato { grid-template-columns: 1fr; gap: 2.5rem; }
     .servicos-grid { grid-template-columns: 1fr 1fr; }
@@ -664,6 +717,86 @@
     .hero-accent { display: none; }
     .nav-links { display: none; }
     .hero-stats { gap: 2rem; }
+    .valores-inner { flex-direction: column; align-items: flex-start; }
+  }
+
+  /* ── MOBILE (max 600px) ── */
+  @media (max-width: 600px) {
+
+    /* NAV */
+    nav { padding: 0 4%; height: 60px; }
+    .nav-logo img { height: 32px; }
+    .nav-cta { padding: 0.4rem 0.9rem; font-size: 0.72rem; }
+
+    /* HERO */
+    .hero { padding: 5rem 4% 3rem; min-height: auto; }
+    .hero h1 { font-size: 2.6rem; }
+    .hero p { font-size: 0.9rem; }
+    .hero-tag { font-size: 0.65rem; }
+    .hero-buttons { flex-direction: column; gap: 0.75rem; }
+    .hero-buttons a { text-align: center; width: 100%; }
+    .hero-stats { flex-wrap: wrap; gap: 1.5rem; margin-top: 2rem; padding-top: 1.5rem; }
+    .stat-num { font-size: 2rem; }
+    .stat-label { font-size: 0.65rem; }
+
+    /* LOGO BANNER */
+    .nav-logo img { height: 28px; }
+
+    /* SOBRE */
+    .sobre { padding: 3rem 4%; }
+    .section-title { font-size: 1.8rem; }
+    .mvv-item { padding: 1.2rem; }
+    .mvv-item h3 { font-size: 1.1rem; }
+    .mvv-item p { font-size: 0.82rem; }
+
+    /* SERVIÇOS */
+    .servicos { padding: 3rem 4%; }
+    .servicos-grid { grid-template-columns: 1fr; gap: 1px; }
+    .servico-card { padding: 1.5rem; }
+    .servico-card h3 { font-size: 1.15rem; }
+    .servico-card p { font-size: 0.82rem; }
+    .servicos-intro { flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+
+    /* FOTOS / PORTFÓLIO */
+    .fotos { padding: 3rem 0; }
+    .fotos-header { padding: 0 4%; }
+    .fotos-grid {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: 4px;
+      padding: 0 4%;
+    }
+    .fotos-grid .foto-item { height: 140px; }
+    .fotos-grid .foto-item:first-child { grid-column: span 2; height: 200px; }
+
+    /* CLIENTES */
+    .clientes { padding: 3rem 0; }
+    .clientes-header { padding: 0 4%; }
+    .cliente-card { width: 140px; height: 80px; }
+
+    /* VALORES */
+    .valores { padding: 2.5rem 4%; }
+    .valores-title { font-size: 1.8rem; }
+    .valor-pill { font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+
+    /* CONTATO */
+    .contato { padding: 3rem 4%; gap: 2rem; }
+    .contato .section-title { font-size: 1.8rem; }
+    .contato-sub { font-size: 0.88rem; margin-bottom: 1.5rem; }
+    .contato-value { font-size: 0.88rem; }
+    .form-row { grid-template-columns: 1fr; gap: 1rem; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select { font-size: 0.85rem; padding: 0.65rem 0.85rem; }
+
+    /* FOOTER */
+    footer { padding: 2rem 4%; }
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 0.75rem; text-align: left; }
+    .footer-logo img { height: 28px; }
+    .footer-copy, .footer-cnpj { font-size: 0.72rem; }
+
+    /* SEÇÃO GERAL */
+    section { padding: 3rem 4%; }
   }
 </style>
 </head>
@@ -682,7 +815,20 @@
     <li><a href="#contato">Contato</a></li>
   </ul>
   <a href="#contato" class="nav-cta">Solicitar Orçamento</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- MENU MOBILE -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#sobre" onclick="fecharMenu()">Sobre</a>
+  <a href="#servicos" onclick="fecharMenu()">Serviços</a>
+  <a href="#projetos" onclick="fecharMenu()">Projetos</a>
+  <a href="#clientes" onclick="fecharMenu()">Clientes</a>
+  <a href="#contato" onclick="fecharMenu()">Contato</a>
+  <a href="#contato" onclick="fecharMenu()">Solicitar Orçamento</a>
+</div>
 
 <!-- LOGO BANNER TOPO -->
 <div style="width:100%;padding-top:68px;line-height:0;background:#fff;">
@@ -925,7 +1071,7 @@
       <div class="contato-dot"></div>
       <div>
         <div class="contato-label">Website</div>
-        <div class="contato-value"><a href="https://site-limit-solucion.vercel.app/" target="_blank" style="color:inherit;">site-limit-solucion.vercel.app</a></div>
+        <div class="contato-value"><a href="https://limitsolucion.vercel.app/" target="_blank" style="color:inherit;">limitsolucion.vercel.app</a></div>
       </div>
     </div>
     <div class="contato-info-item">
@@ -1014,7 +1160,26 @@
 
 
 
-  // Smooth active nav
+  // Menu hamburguer
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('ativo');
+    mobileMenu.classList.toggle('ativo');
+  });
+
+  function fecharMenu() {
+    hamburger.classList.remove('ativo');
+    mobileMenu.classList.remove('ativo');
+  }
+
+  // Fechar menu ao clicar fora
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !mobileMenu.contains(e.target)) {
+      fecharMenu();
+    }
+  });
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let cur = '';
